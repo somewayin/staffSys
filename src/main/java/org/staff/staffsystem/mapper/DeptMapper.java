@@ -14,4 +14,10 @@ public interface DeptMapper {
      */
     @Select("select * from dept")
     List<Dept> list();
+
+    /**
+     * 根据id删除部门
+     */
+    @Select("delete from dept where id=#{id}")
+    void delete(Integer id);
 }
