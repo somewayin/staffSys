@@ -1,5 +1,6 @@
 package org.staff.staffsystem.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -34,4 +35,18 @@ public interface EmpMapper {
 //    @Select("select * from emp")
     public List<Emp> list(@Param("name") String name, @Param("gender") Short gender, @Param("begin") LocalDate begin,
                           @Param("end") LocalDate end);
+
+    /**
+     * 批量删除操作
+     * @param ids
+     */
+    public void delete(@Param("ids") List<Integer> ids);
+
+    /**
+     * 新增员工
+     * @param emp
+     */
+    @Insert("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)" +
+            "values (#{username}, #{name} ,#{gender}, #{image}, #{job}, #{entrydate}, #{dept_id}, #{create_time}, #{update_time});")
+    void insert(Emp emp);
 }

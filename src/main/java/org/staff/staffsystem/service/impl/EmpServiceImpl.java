@@ -10,6 +10,7 @@ import org.staff.staffsystem.pojo.PageBean;
 import org.staff.staffsystem.service.EmpService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -25,5 +26,17 @@ public class EmpServiceImpl implements EmpService {
         Page<Emp> p = (Page<Emp>) empList;
         PageBean pageBean = new PageBean(p.getTotal(), p.getResult());
         return pageBean;
+    }
+
+    @Override
+    public void delete(List<Integer> ids) {
+        empMapper.delete(ids);
+    }
+
+    @Override
+    public void add(Emp emp) {
+        emp.setCreate_time(LocalDateTime.now());
+        emp.setUpdate_time(LocalDateTime.now());
+        empMapper.insert(emp);
     }
 }
