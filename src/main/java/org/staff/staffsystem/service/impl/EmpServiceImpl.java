@@ -9,6 +9,7 @@ import org.staff.staffsystem.pojo.Emp;
 import org.staff.staffsystem.pojo.PageBean;
 import org.staff.staffsystem.service.EmpService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -17,9 +18,10 @@ public class EmpServiceImpl implements EmpService {
     EmpMapper empMapper;
 
     @Override
-    public PageBean getPage(Integer page, Integer pageSize) {
+    public PageBean getPage(Integer page, Integer pageSize, String name, Short gender,
+                            LocalDate begin, LocalDate end) {
         PageHelper.startPage(page, pageSize);
-        List<Emp> empList = empMapper.list();
+        List<Emp> empList = empMapper.list(name, gender, begin, end);
         Page<Emp> p = (Page<Emp>) empList;
         PageBean pageBean = new PageBean(p.getTotal(), p.getResult());
         return pageBean;

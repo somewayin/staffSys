@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.staff.staffsystem.pojo.Emp;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Mapper
@@ -30,6 +31,7 @@ public interface EmpMapper {
      * 员工数据查询
      * @return
      */
-    @Select("select * from emp")
-    public List<Emp> list();
+//    @Select("select * from emp")
+    public List<Emp> list(@Param("name") String name, @Param("gender") Short gender, @Param("begin") LocalDate begin,
+                          @Param("end") LocalDate end);
 }
