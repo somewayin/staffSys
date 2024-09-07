@@ -47,7 +47,7 @@ public interface EmpMapper {
      * @param emp
      */
     @Insert("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)" +
-            "values (#{username}, #{name} ,#{gender}, #{image}, #{job}, #{entrydate}, #{dept_id}, #{create_time}, #{update_time});")
+            "values (#{username}, #{name} ,#{gender}, #{image}, #{job}, #{entrydate}, #{deptId}, #{createTime}, #{updateTime});")
     void insert(Emp emp);
 
     /**
