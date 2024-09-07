@@ -12,9 +12,9 @@ public class Emp {
     private String image;
     private Short job;
     private LocalDateTime entrydate;
-    private Integer dept_id;
-    private LocalDateTime create_time;
-    private LocalDateTime update_time;
+    private Integer deptId;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
     public Integer getId() {
         return id;
@@ -80,28 +80,28 @@ public class Emp {
         this.entrydate = entrydate;
     }
 
-    public Integer getDept_id() {
-        return dept_id;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setDept_id(Integer dept_id) {
-        this.dept_id = dept_id;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
-    public LocalDateTime getCreate_time() {
-        return create_time;
+    public LocalDateTime getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(LocalDateTime create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -115,9 +115,9 @@ public class Emp {
                 ", image='" + image + '\'' +
                 ", job=" + job +
                 ", entrydate=" + entrydate +
-                ", dept_id=" + dept_id +
-                ", create_time=" + create_time +
-                ", update_time=" + update_time +
+                ", deptId=" + deptId +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }
